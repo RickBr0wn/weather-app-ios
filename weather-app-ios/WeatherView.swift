@@ -5,40 +5,26 @@
 //  Created by Rick Brown on 21/11/2020.
 //
 
-/*
+/**
  MVVM
-  Model
-  View
-  ViewModel
+ Model
+ View
+ ViewModel
  */
 
 import SwiftUI
 
 struct WeatherView: View {
-  @ObservedObject var viewModel: WeatherViewModel
   
   var body: some View {
     VStack {
-      Text(viewModel.cityName)
-        .font(.largeTitle)
-        .padding()
-      
-      Text(viewModel.temperature)
-        .font(.system(size: 70))
-        .bold()
-      
-      Text(viewModel.weatherIcon)
-        .font(.largeTitle)
-        .padding()
-      
-      Text(viewModel.weatherDescription)
+      Text("OK")
     }
-    .onAppear(perform:viewModel.refresh)
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct WeatherView_Previews: PreviewProvider {
   static var previews: some View {
-    WeatherView(viewModel: WeatherViewModel(weatherService: WeatherService()))
+    WeatherView()
   }
 }
