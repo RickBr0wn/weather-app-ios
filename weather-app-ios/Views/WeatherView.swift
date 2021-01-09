@@ -10,15 +10,20 @@
  Model
  View
  ViewModel
- */
+*/
 
 import SwiftUI
 
 struct WeatherView: View {
+  var weatherResponse: Weather = Bundle.main.decode("weather.json")
   
   var body: some View {
     VStack {
-      Text("OK")
+      VStack {
+        Text(String(weatherResponse.lat))
+        
+        Text(String(weatherResponse.lon))
+      }
     }
   }
 }
